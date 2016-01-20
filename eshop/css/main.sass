@@ -1,0 +1,374 @@
+
+@import bourbon/bourbon
+
+$sliderHeight : 450px
+
+
+
+body
+  padding-top: 80px
+  font-family: $georgia
+
+.row
+  margin: 0
+  padding: 0
+
+.overflow
+  overflow: hidden
+
+.navbar
+  min-height: 80px
+  margin: auto
+  box-shadow: 0 0 10px #777
+
+.navbar-brand
+  border-top: 2px solid #777
+  border-bottom: 2px solid #777
+  padding: 15px 30px
+
+
+.categories-dropdown
+
+
+.categories
+  width: 100vw
+  position: fixed
+  z-index: 3
+  background: white
+  height: 150px
+  cursor: pointer
+  box-shadow: 0 0 5px #7e7e7e
+  +transition
+  transform: translateY(-150px)
+
+  ul
+    list-style: none
+    padding: 0 0 0 50px
+    margin: 0
+    height: 100%
+    position: relative
+  li
+    color: #777
+    height: 100%
+    padding-top: 50px
+    font-size: 24px
+    position: relative
+    +transition(.3s)
+    &:hover span
+      border-bottom: 2px solid #777
+      border-top: 2px solid #777
+
+    span
+      padding: 10px 15px
+      +transition(.15s)
+
+
+.show
+  transform: translateY(0px)
+  margin-bottom: 150px
+
+.login-dropdown
+  box-sizing: content-box
+  padding: 20px 30px 20px 20px
+  width: 300px
+
+
+
+
+  input
+    margin-bottom: 15px
+    outline: none
+    border: 1px solid #ccc
+    border-radius: 2px
+    &:focus,
+    &:active
+      border-color: #adadad
+
+  .register
+    margin-left: 30px
+    color: #888
+    text-decoration: underline
+    &:hover
+      color: #000
+
+.padding-top
+  padding-top: 15px
+
+
+.full-width
+  width: 100vw
+  max-width: 100%
+  margin: 0 auto
+  padding: 0
+  position: relative
+
+
+.content
+  +transition
+
+.intro-cover
+  position: relative
+  height: $sliderHeight
+  width: 100%
+  z-index: 3
+  background:
+    attachment: fixed
+    image:url('../img/intro-cover.jpg')
+    size: 100%
+    repeat: no-repeat
+  &:hover h2,
+  &:focus h2
+    text-decoration: underline
+    +transform(translateX(15px))
+
+  a
+    color: white
+    text-decoration: none
+
+  h1,h2
+    font-size: 42px
+    background: transparentize(black, .3)
+    padding: 10px 15px
+    position: absolute
+    top: 80px
+
+    right: 50px
+    cursor: pointer
+    +transition
+
+  h2
+    top: 180px
+    font-size: 38px
+
+  span
+      font-size: 30px
+
+
+
+/**********        ITEMS    **************/
+.main
+  // margin-top: $sliderHeight
+  background: white
+  position: relative
+  z-index: 2
+  width: 100%
+  padding-bottom: 80px
+
+  .some-lorem
+    color: #616161
+    text-align: center
+    font-size: 18px
+    max-width: 960px
+    display: block
+    box-sizing: content-box
+    padding: 80px 50px
+    margin: 0 auto 50px
+    border-bottom: 1px solid #d4d4d4
+
+
+.categories-list
+  margin-left: 50px
+  position: absolute
+  top: 300px
+  +transition
+  a
+      color: #616161
+
+
+  span
+    font-size: 20px
+    margin: 0
+    margin-bottom: 15px
+    display: block
+    a
+      color: #616161
+
+
+  ul
+    list-style: none
+    margin-bottom: 40px
+    display: block
+    li
+      font-size: 18px
+      line-height: 26px
+      a
+        padding-bottom: 5px
+
+
+
+
+
+.main-page-items
+  width: 80%
+  max-width: 960px
+  margin: 0 0 0 50px
+  position: relative
+  color: #616161
+
+  h2
+    margin-bottom: 80px
+
+
+.item
+  height: 240px
+  cursor: pointer
+  position: relative
+  margin-bottom: 50px
+  overflow: hidden
+
+  &:hover figcaption
+    +transform(translateX(0))
+  &:hover img
+    +transform(scale(1.2))
+
+
+  img
+    max-width: 100%
+    max-height: 100%
+    +transition(.35s)
+
+
+  figcaption
+    font-size: 16px
+    position: absolute
+    left: 0
+    bottom: 15px
+    background: transparentize(black, .3)
+    color: white
+    padding: 3px 11px
+    +transition
+    +transform(translateX(-100%))
+
+
+section
+  margin-bottom: 400px
+
+footer
+  background: black
+  height: 400px
+  width: 100%
+  position: fixed
+  bottom: 0
+  color: white
+
+.footer-stuff
+  width: 80%
+  max-width: 960px
+  margin: 20px auto 0
+
+  h4
+    font-size: 28px
+    margin-bottom: 30px
+  h5
+    font-size: 24px
+    margin-bottom: 15px
+
+  .contact,
+  .follow
+    line-height: 30px
+    span
+      font-size: 18px
+      display: inline
+
+    a
+      display: inline
+      font-size: 18px
+
+    .social
+      display: block
+
+  .newsletter
+    input
+      font-size: 20px
+      margin-bottom: 50px
+      color: black
+
+
+/***********************************************************/
+/***********************************************************/
+/***********************************************************/
+/************************************************************
+            ITEM PAGE
+/***********************************************************/
+.item-page
+  .item-page-main
+    padding: 70px 0 150px 0
+
+    p
+      font-size: 16px
+
+
+  h2
+    margin-bottom: 80px
+  .item-preview
+
+
+  .item-preview-image
+    max-width: 500px
+    width: 100%
+    height: 100%
+
+  .item-description
+    padding-right: 250px
+    .price
+      font-size: 20px
+      span
+        font-weight: bold
+    button
+      font-size: 28px
+      padding: 3px 20px
+
+  .similar
+    overflow: hidden
+    position: relative
+    img
+      height: 280px
+
+    &:hover figcaption
+      +transform(translateX(0))
+    &:hover img
+      +transform(scale(1.1))
+
+
+    img
+      max-width: 100%
+      max-height: 100%
+      +transition(.35s)
+
+
+    figcaption
+      font-size: 16px
+      position: absolute
+      left: 0
+      bottom: 15px
+      background: transparentize(black, .3)
+      color: white
+      padding: 3px 11px
+      +transition
+      +transform(translateX(-100%))
+
+
+  /**************************MEDIA QUERIES******************************/
+
+@media(max-width: 992px)
+    .intro-cover
+      height: 300px
+
+    .main
+      // margin-top: 300px
+
+      .some-lorem
+        font-size: 16px
+        border: none
+
+    .main-page-items
+      padding-top: 50px
+
+    .categories-list
+      margin: 150px 30px
+
+      span
+        font-size: 18px
+      ul
+        a
+          font-size: 16px

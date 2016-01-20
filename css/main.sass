@@ -1,0 +1,112 @@
+@import bourbon/bourbon
+$color: #dddddd
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+body
+
+#logo-section
+  width: 100vw
+  max-width: 100%
+  height: 100vh
+  @include linear-gradient(#37addf, #62cefb)
+
+  color: $color
+  position: relative
+
+  h1
+    cursor: pointer
+    width: 600px
+    font-size: 120px
+    font-family: 'Indie Flower', cursive
+    text-align: center
+    position: relative
+    position: absolute
+    left: 50%
+    top: 50%
+    text-shadow: 2px 2px #666
+    +transform(translate(-55%, -50%))
+
+    span
+      font-size: 260px
+      position: absolute
+      // border: 2px solid red
+      top: -85px
+      right: 25px
+
+  img
+    position: absolute
+    width: 100px
+    top: 85%
+    left: 50%
+    +transform(translateX(-50%))
+    animation: bounce 1.25s infinite
+    &:hover
+      animation-play-state:paused
+
+
+#projects-section
+
+  font-family: $georgia
+  padding-top: 100px
+  background: #c8c8c8
+  width: 100vw
+  max-width: 100%
+  height: 100vh
+  padding-left: 150px
+
+
+  .projects
+    margin: 0 auto
+    max-width: 1200px
+    .project
+      width: 25%
+      max-width: 300px
+      height: 265px
+      display: inline-block
+      overflow: hidden
+      margin: 0 100px 50px 0
+      position: relative
+      &:nth-child(3n)
+        margin-right: 0
+      &:hover img
+        +transform(scale(1.2))
+        filter: blur(1px)
+      &:hover .description
+        opacity: 1
+
+      img
+        width: 100%
+        height: 100%
+        +transition
+
+      .description
+        background: transparentize(black, .45)
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        opacity: 0
+        +transition(.5s)
+        span
+          font-size: 26px
+          position: absolute
+          top: 50%
+          left: 50%
+          +transform(translate(-50%, -50%))
+          color: white
+
+
+
+@keyframes bounce
+  0%
+    +transform(translate3d(-50%, 0px, 0px))
+    animation-timing-function: ease-in
+  50%
+    +transform(translate3d(-50%, 10px, 0px))
+    animation-timing-function: ease-in
+  100%
+    +transform(translate3d(-50%, 0px, 0px))
+    animation-timing-function: ease-in
