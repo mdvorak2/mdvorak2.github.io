@@ -7,8 +7,7 @@ $color: #dddddd
   box-sizing: border-box
 body
 
-.red
-  background: red
+
 
 h1, h2, h3, h4, h5
   font-family: 'Viga', sans-serif
@@ -66,9 +65,10 @@ section
   background: #37addf
   color: $color
   position: relative
-  +transition(3s)
+  +transition(height 2.75s)
 
   .logo
+    overflow: hidden
     position: absolute
     top: 50%
     left: 50%
@@ -107,7 +107,7 @@ section
 
 #about
   .content
-    padding-top: 180px
+    padding-top: 150px
     width: 980px
     margin: 0 auto
     color: #7c7c7c
@@ -119,56 +119,55 @@ section
     width: 900px
     text-align: center
     margin: 0 85px 25px 0
-    padding: 0 50px 90px
+    padding: 0 50px 120px
     border-color: #d9d9d9
-#projects-section
-  font-family: $georgia
-  padding-top: 100px
-  background: #c1e0bf
-  padding-left: 150px
+
 
   .projects
-    margin: 0 auto
+    margin: 80px auto
     max-width: 1200px
+    h2
+      margin-bottom: 50px
+      color: #696969
+    .eshop
+      background:
+        image: url('../img/projects/eshop.png')
+        size: cover
+
+    .marie
+      background:
+        image: url('../img/projects/marie.png')
+        size: cover
+
     .project
-      width: 25%
-      max-width: 300px
-      height: 265px
-      display: inline-block
-      overflow: hidden
-      margin: 0 100px 50px 0
       position: relative
-      &:nth-child(3n)
-        margin-right: 0
-      &:hover img
-        +transform(scale(1.2))
-        filter: blur(1px)
-      &:hover .description
+      width: 250px
+      height: 250px
+      box-shadow: 2px 3px 10px #bbb
+      border-radius: 50%
+      display: inline-block
+      margin: 0 25px 80px
+
+      &:hover .fog
         opacity: 1
-
-      img
-        width: 100%
-        height: 100%
-        +transition
-
-      .description
-        background: transparentize(black, .45)
+      .fog
+        border-radius: 50%
+        opacity: 0
         position: absolute
         top: 0
         right: 0
         bottom: 0
         left: 0
-        opacity: 0
+        background: transparentize(black, 0.58)
         +transition(.5s)
+
         span
-          font-size: 26px
+          color: white
           position: absolute
           top: 50%
           left: 50%
+          font-size: 26px
           +transform(translate(-50%, -50%))
-          color: white
-
-
 
 
 @keyframes bounce
@@ -202,3 +201,100 @@ section
   95%
    +transform(translate(-50%, -50%) scale(1))
    animation-timing-function: ease-in-out
+
+
+
+//MEDIA QUERIES
+
+
+$medium : 1000px
+$small : 776px
+@media screen and (max-width: $medium)
+  #logo-section .logo
+
+    h1
+      font-size: 80px
+      text-shadow: 2px 2px #666
+      span
+        font-size: 180px
+        top: -65px
+        right: 115px
+
+  #about
+    margin: 0 auto
+
+    .content
+      width: 100%
+      p
+        width: 85%
+        margin: 0 auto
+      .projects
+        width: 100%
+
+        .project
+          margin: 0 0 40px
+          +transform(scale(.8))
+
+@media screen and (max-width: $small)
+
+  .navigation
+
+    height: 60px
+    box-shadow: 0 0 5px #555
+    span
+      display: none
+    ul
+      width: 100%
+      text-align: center
+      font-size: 14px
+      right: 0
+      border: 1px solid black
+
+      li
+        display: inline-block
+        margin: 20px 5% 0 0px
+        a
+          text-decoration: none
+          color: white
+          padding: 0 5px 3px
+          &:hover
+            border-bottom: 2px solid white
+
+  #logo-section .logo
+    width: 100vw
+
+
+    h1
+      font-size: 50px
+      text-shadow: 2px 2px #666
+      position: relative
+      width: 300px
+      margin: 0 auto
+      text-align: center
+      span
+        position: absolute
+        font-size: 110px
+        top: -38px
+        right: 35px
+
+  #about
+    .content
+      width: 100vw
+      max-width: 100%
+      margin: 0
+      padding: 80px 0 0 0
+      p
+        width: 100%
+        margin: 0 auto
+        padding: 0 20px 50px
+
+      .projects
+        margin-top: 30px
+        .project
+          width: 100%
+          border-radius: 0
+          margin: 0 0 50px
+          +transform(scale(1))
+
+          .fog
+            border-radius: 0
