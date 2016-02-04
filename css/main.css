@@ -23,6 +23,7 @@ h1, h2, h3, h4, h5, h6, small {
   left: 0;
   height: 50px;
   box-shadow: 0 0 5px #4d4141;
+  z-index: 9001;
 }
 
 #navbar, #navbar2 {
@@ -76,15 +77,6 @@ section {
   overflow: hidden;
 }
 
-section img {
-  position: absolute;
-  z-index: -2;
-  -webkit-filter: blur(2px) grayscale(100%);
-  filter: blur(2px) grayscale(100%);
-  -webkit-transition: 1.3s;
-  transition: 1.3s;
-}
-
 #section1 {
   height: 100vh;
   max-height: 100%;
@@ -93,6 +85,15 @@ section img {
   background-image: -webkit-linear-gradient(left, #c9c9c9 10%, #ffffff 70%, , , , , , , , );
   background-image: linear-gradient(to right,#c9c9c9 10%, #ffffff 70%, , , , , , , , );
   z-index: -3;
+}
+
+#section1 img {
+  position: absolute;
+  z-index: -2;
+  -webkit-filter: blur(2px) grayscale(50%);
+  filter: blur(2px) grayscale(50%);
+  -webkit-transition: 1.3s;
+  transition: 1.3s;
 }
 
 #section1 .intro {
@@ -148,6 +149,7 @@ section img {
   right: -180px;
   bottom: 100px;
   opacity: 0;
+  z-index: -3;
   -webkit-transform: translateX(-50px);
   -ms-transform: translateX(-50px);
   transform: translateX(-50px);
@@ -177,11 +179,37 @@ section img {
   width: 80%;
   min-width: 250px;
   color: #919191;
+  opacity: 0;
+  -webkit-transform: translateX(-50px);
+  -ms-transform: translateX(-50px);
+  transform: translateX(-50px);
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+#section2 .about p.show {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
 }
 
 #section2 .about h2 {
   margin: 0 0 30px;
   color: #919191;
+  opacity: 0;
+  -webkit-transform: translateX(-50px);
+  -ms-transform: translateX(-50px);
+  transform: translateX(-50px);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+#section2 .about h2.show {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
 }
 
 #section2 .about img.about-img {
@@ -277,11 +305,11 @@ section img {
 }
 
 #section3 .portfolio .project a.marie {
-  background-image: url("../img/projects/marie.png");
+  background-image: url("../img/projects/marie.jpg");
   background-size: cover;
 }
 
 #section3 .portfolio .project a.eshop {
-  background-image: url("../img/projects/eshop.png");
+  background-image: url("../img/projects/eshop.jpg");
   background-size: cover;
 }

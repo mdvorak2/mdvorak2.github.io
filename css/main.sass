@@ -28,6 +28,7 @@ h1, h2, h3, h4, h5, h6, small
   left: 0
   height: 50px
   box-shadow: 0 0 5px #4d4141
+  z-index: 9001
 
 
 
@@ -77,11 +78,7 @@ section
   position: relative
   overflow: hidden
 
-  img
-    position: absolute
-    z-index: -2
-    +filter(blur(2px) grayscale(100%))
-    +transition(1.3s)
+
 
 
 
@@ -92,6 +89,11 @@ section
   @include linear-gradient(to right, #c9c9c9 10%, #ffffff 70%)
   z-index: -3
 
+  img
+    position: absolute
+    z-index: -2
+    +filter(blur(2px) grayscale(50%))
+    +transition(1.3s)
 
   .intro
     padding-top: 250px
@@ -112,7 +114,6 @@ section
 
       small
         font-size: 40px
-
     p
       opacity: 0
       +transform(translateX(50px))
@@ -130,6 +131,7 @@ section
       right: -180px
       bottom: 100px
       opacity: 0
+      z-index: -3
       +transform(translateX(-50px))
 
 
@@ -144,6 +146,8 @@ section
   color: red
   z-index: -2
   height: 800px
+
+
   .about
     padding: 160px 0 0 80px
     width: 45%
@@ -153,10 +157,22 @@ section
       width: 80%
       min-width: 250px
       color: #919191
+      opacity: 0
+      +transform(translateX(-50px))
+      +transition(2s)
+      &.show
+        opacity: 1
+        +transform(translateX(0))
 
     h2
       margin: 0 0 30px
       color: #919191
+      opacity: 0
+      +transform(translateX(-50px))
+      +transition(1s)
+      &.show
+        opacity: 1
+        +transform(translateX(0))
 
     img.about-img
       width: 60%
@@ -171,6 +187,7 @@ section
     img.show
       opacity: 1
       +filter(blur(3px))
+
 #section3
   .portfolio-text
     text-align: center
@@ -229,9 +246,9 @@ section
         +transform(translate(0))
       a.marie
         background:
-          image:url('../img/projects/marie.png')
+          image:url('../img/projects/marie.jpg')
           size: cover
       a.eshop
         background:
-          image:url('../img/projects/eshop.png')
+          image:url('../img/projects/eshop.jpg')
           size: cover
