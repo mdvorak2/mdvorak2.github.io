@@ -8,20 +8,28 @@ function intro(){
 
   setTimeout(function(){
         $('.intro p').addClass('show');
-  },1000);
+  },800);
 
   setTimeout(function(){
         $('.mcbkair').addClass('show');
-  },1500);
+  },1100);
 
   setTimeout(function(){
       $('.phone').addClass('show');
-  },1900);
+  },1350);
 }
 
 
 
+$('.form .input-group input').focusout(function(){
+  var text_val = $(this).val();
 
+  if(text_val === ""){
+    $(this).removeClass('has-value');
+  }else{
+    $(this).addClass('has-value');
+  }
+});
 
 
 
@@ -58,18 +66,44 @@ $(window).scroll(function(){
     show($('.about p'));
     show($('.about h2'));
 
+    function floating(){
+      $('.intro h1, .intro p').css({
+          'transform' : 'translate(0px, '+ wScroll /25 +'%)'
+      });
+
+      $('.phone').css({
+          'transform' : 'translate(0px, '+ wScroll /85 +'%)'
+      });
+
+      $('.mcbkair').css({
+          'transform' : 'translate(0px, -'+ wScroll /85 +'%)'
+      });
+
+      $('.about-img').css({
+          'transform' : 'translate(0px, -'+ wScroll /55 +'%)'
+        });
+  }
+
+  floating();
 
     /****************************** PORTFOLIO SLIDE-IN ******************************/
+    // if(( $('.portfolio').offset().top-wScroll) <= (wHeight/1.55) ) {
+    //   $('.project a').each(function(i){
+    //     setTimeout(function() {
+    //       $('.project a').eq(i).addClass('show');
+    //     }, 250*(i+1));
+    //
+    //
+    //   });
+    // } animation: bounceInDown 1s 1
     if(( $('.portfolio').offset().top-wScroll) <= (wHeight/1.55) ) {
-      $('.project a').each(function(i){
-        setTimeout(function() {
-          $('.project a').eq(i).addClass('show');
-        }, 250*(i+1));
-
-
+      $('.project').each(function(i){
+        setTimeout(function(){
+          $('.project').eq(i).addClass('animate');
+        },250*(i+1));
       });
-    }
 
+    }
 
 
 

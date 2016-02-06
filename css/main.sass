@@ -1,10 +1,16 @@
 @import bourbon/bourbon
-
+@import animate.css
 
 $hColor: #464545
 $pColor: #696969
 $red: #870909
 $lighterRed: #b60606
+$lightBlue: #21a1e1
+
+body
+    @include linear-gradient(to right, #c9c9c9 10%, #ffffff 70%)
+
+
 *
   margin: 0
   padding: 0
@@ -30,6 +36,10 @@ h1, h2, h3, h4, h5, h6, small
   box-shadow: 0 0 5px #4d4141
   z-index: 9001
 
+.b-border
+  border-bottom: 1px solid #bebebe
+  padding: 0 45px 80px
+  margin-bottom: 30px
 
 
 
@@ -124,7 +134,7 @@ section
       left: -150px
       top: 150px
       opacity: 0
-      +transform(translateX(50px))
+      +transform(translateY(-30px))
 
     img.mcbkair
       width: 680px
@@ -132,7 +142,7 @@ section
       bottom: 100px
       opacity: 0
       z-index: -3
-      +transform(translateX(-50px))
+      +transform(translateY(30px))
 
 
     img.show
@@ -189,66 +199,218 @@ section
       +filter(blur(3px))
 
 #section3
+  background: #e2e2e2
+  padding: 120px 0
+  text-align: center
+
   .portfolio-text
-    text-align: center
-    height: 600px
-    width: 50%
-    float: right
-    background: #dfdfdf
+    max-width: 980px
+    margin: 0 auto
 
     h2
-      margin: 140px 0 35px
+      margin: 0 0 30px 0
     p
-      width: 50%
-      margin: 30px auto
-
+      color: #908E8E
 
   .portfolio
+    max-width: 980px
+    margin: 0 auto
+    padding-left: 50px
+
+
     .project
-      width: 50%
-      height: 300px
-      float: left
-      border-right: 1px solid #a3a2a2
-      border-top: 1px solid #a3a2a2
+      visibility: hidden
+      width: 210px
+      height: 210px
+      margin: 50px 35px 0
       position: relative
+      border-radius: 50%
       overflow: hidden
-      &:hover a figcaption
-        +transform(translateX(0))
-        opacity: 1
+      display: inline-block
+      box-shadow: 2px 2px 10px #b1b1b1
+      +transition
+      &:hover
+        +transform(translateY(-10px))
+      .animate
+        animation: bounceInDown 1s 1
+        visibility: visible
       a
         position: absolute
         top: 0
         right: 0
         bottom: 0
         left: 0
-        +transform(translateX(-100%))
-        +transition(1.5s)
-
-        figcaption
-          color: white
-          background: $red
-          font-size: 18px
-          // border: 1px solid #6b0808
-          // border-right: none
-          box-shadow: 2px 2px 8px #2d2d2d
+        border-radius: 50%
+        &:hover .fog
+          opacity: 1
+        &:hover .fog span
+          top: 50%
+        .fog
+          background: transparentize(black, .65)
+          border-radius: 50%
           position: absolute
-          bottom: 5px
+          top: 0
           right: 0
-          text-align: center
-          min-width: 250px
-          padding: 15px 50px
+          bottom: 0
+          left: 0
           opacity: 0
-          +transition(translate, .3s)
-          +transform(translateX(100%))
+          +transition
+          span
+            color: white
+            position: absolute
+            top: -50%
+            left: 50%
+            +transform(translate(-50%, -50%))
+            +transition(.3s)
+            animation: bounceInUp 1s 1
 
 
-      a.show
-        +transform(translate(0))
-      a.marie
-        background:
-          image:url('../img/projects/marie.jpg')
-          size: cover
       a.eshop
         background:
-          image:url('../img/projects/eshop.jpg')
+          image: url('../img/projects/eshop.jpg')
           size: cover
+
+      a.marie
+        background:
+          image: url('../img/projects/marie.jpg')
+          size: cover
+
+    .animate
+      animation: bounceInDown 1.5s 1
+      visibility: visible
+
+  // .portfolio-text
+  //   text-align: center
+  //   height: 600px
+  //   width: 50%
+  //   float: right
+  //   background: #dfdfdf
+  //   box-shadow:  inset 1px -1px 3px #989898
+  //
+  //   h2
+  //     margin: 140px 0 35px
+  //   p
+  //     width: 50%
+  //     margin: 30px auto
+
+
+    // .project
+    //   width: 50%
+    //   height: 300px
+    //   float: left
+    //   border-right: 1px solid #d9d9d9
+    //   border-top: 1px solid #d9d9d9
+    //   position: relative
+    //   overflow: hidden
+    //   &:hover a figcaption
+    //     +transform(translateX(0))
+    //     opacity: 1
+    //   a
+    //     position: absolute
+    //     top: 0
+    //     right: 0
+    //     bottom: 0
+    //     left: 0
+    //     +transform(translateX(-100%))
+    //     +transition(1.5s)
+    //
+    //     figcaption
+    //       color: white
+    //       background: $red
+    //       font-size: 18px
+    //       // border: 1px solid #6b0808
+    //       // border-right: none
+    //       box-shadow: 2px 2px 8px #2d2d2d
+    //       position: absolute
+    //       bottom: 5px
+    //       right: 0
+    //       text-align: center
+    //       min-width: 250px
+    //       padding: 15px 50px
+    //       opacity: 0
+    //       +transition(translate, .3s)
+    //       +transform(translateX(100%))
+
+
+
+
+
+
+#section4
+  min-height: 500px
+  background: white
+
+  .contact
+    width: 45%
+    min-width: 450px
+    float: left
+    padding: 80px 0 0 150px
+
+    p,h2
+      width: 65%
+      margin: 0 0 35px 15%
+      a
+        font-weight: bold
+        font-size: 1.1em
+
+    .sidenote
+      color: #a8a6a6
+      font-size: 14px
+      padding: 15px 10px
+
+      //border-left: 3px solid #a8a6a6
+
+  .form
+    margin-top: 50px
+    float: right
+    width: 45%
+    margin-left: 5%
+
+
+    input,
+    textarea
+      background: none
+      border: 1px solid $pColor
+      color: $red
+      padding: 15px 40px
+      font-size: 18px
+
+      &:focus,
+      &:active
+        outline: none
+
+      &[type="text"],
+      &[type="email"]
+        border: none
+        border-bottom: solid 1px $pColor
+
+      &[type="submit"]
+        &:active
+          color: white
+          background: $pColor
+    textarea
+      padding: 15px 10px
+    .input-group
+      display: inline-block
+      margin-right: 20px
+      position: relative
+      input
+        padding: 15px 0
+
+      label
+        +position(absolute, 50% null null 0px)
+        +transform(translateY(-50%))
+        font:
+          //family: $georgia
+          style: italic
+          size: 18px
+        color: #999
+        pointer-events: none
+          //makes label unclickable!!!
+        +transition
+
+      input:focus + label,
+      input.has-value + label
+        top: -10px
+        font-size: 12px
+        color: #aaa
