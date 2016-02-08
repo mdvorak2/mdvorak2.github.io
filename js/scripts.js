@@ -31,7 +31,14 @@ $('.form .input-group input').focusout(function(){
   }
 });
 
-
+$('.close').click(function(){
+  $('.alert').css({
+    'display':'none'
+  });
+  $('body').css({
+    'margin-bottom':'0'
+  });
+});
 
 
 
@@ -67,21 +74,21 @@ $(window).scroll(function(){
     show($('.about h2'));
 
     function floating(){
-      $('.intro h1, .intro p').css({
-          'transform' : 'translate(0px, '+ wScroll /25 +'%)'
-      });
+      // $('.intro h1, .intro p').css({
+      //     'transform' : 'translate(0px, '+ wScroll /25 +'%)'
+      // });
 
       $('.phone').css({
-          'transform' : 'translate(0px, '+ wScroll /85 +'%)'
+          'transform' : 'translate(0px, '+ wScroll /25 +'%)',
       });
 
       $('.mcbkair').css({
           'transform' : 'translate(0px, -'+ wScroll /85 +'%)'
       });
-
-      $('.about-img').css({
-          'transform' : 'translate(0px, -'+ wScroll /55 +'%)'
-        });
+      //
+      // $('.about-img').css({
+      //     'transform' : 'translate(0px, -'+ ((wScroll /55)) +'%)'
+      //   });
   }
 
   floating();
@@ -116,6 +123,7 @@ $(window).scroll(function(){
   });/* scroll fce  */
 
 intro();
+
 
 
 }) /* doc.rdy */

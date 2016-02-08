@@ -4,6 +4,7 @@ body {
   background-image: -webkit-linear-gradient(left, #c9c9c9 10%, #ffffff 70%);
   background-image: -webkit-linear-gradient(left, #c9c9c9 10%, #ffffff 70%, , , , , , , , );
   background-image: linear-gradient(to right,#c9c9c9 10%, #ffffff 70%, , , , , , , , );
+  margin-bottom: 35px;
 }
 
 * {
@@ -38,6 +39,32 @@ h1, h2, h3, h4, h5, h6, small {
   border-bottom: 1px solid #bebebe;
   padding: 0 45px 80px;
   margin-bottom: 30px;
+}
+
+.alert {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 35px;
+  padding: 8px 0 0 0;
+  text-align: center;
+  font-size: 14px;
+  background: #3b3b3b;
+  color: #aaaaaa;
+  box-shadow: 0 0 5px #636363;
+}
+
+.alert .close {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 8px;
+  right: 10px;
+  cursor: pointer;
 }
 
 #navbar, #navbar2 {
@@ -106,8 +133,8 @@ section {
   z-index: -2;
   -webkit-filter: blur(2px) grayscale(50%);
   filter: blur(2px) grayscale(50%);
-  -webkit-transition: 1.3s;
-  transition: 1.3s;
+  -webkit-transition: opacity 1.3s;
+  transition: opacity 1.3s;
 }
 
 #section1 .intro {
@@ -144,8 +171,8 @@ section {
   -webkit-transform: translateX(50px);
   -ms-transform: translateX(50px);
   transform: translateX(50px);
-  -webkit-transition: 1.5s;
-  transition: 1.5s;
+  -webkit-transition: opacity 1.5s;
+  transition: opacity 1.5s;
 }
 
 #section1 .intro img.phone {
@@ -236,8 +263,8 @@ section {
   z-index: -1;
   -webkit-filter: blur(10px);
   filter: blur(10px);
-  -webkit-transition: 2.5s;
-  transition: 2.5s;
+  -webkit-transition: opacity 2.5s;
+  transition: opacity 2.5s;
 }
 
 #section2 .about img.show {
@@ -289,12 +316,6 @@ section {
   -webkit-transform: translateY(-10px);
   -ms-transform: translateY(-10px);
   transform: translateY(-10px);
-}
-
-#section3 .portfolio .project .animate {
-  -webkit-animation: bounceInDown 1s 1;
-          animation: bounceInDown 1s 1;
-  visibility: visible;
 }
 
 #section3 .portfolio .project a {
@@ -360,6 +381,7 @@ section {
 #section4 {
   min-height: 500px;
   background: white;
+  padding: 0 0 20px 0;
 }
 
 #section4 .contact {
@@ -424,12 +446,14 @@ section {
 
 #section4 .form textarea {
   padding: 15px 10px;
+  display: block;
+  margin: 80px 0;
 }
 
 #section4 .form .input-group {
-  display: inline-block;
   margin-right: 20px;
   position: relative;
+  display: inline-block;
 }
 
 #section4 .form .input-group input {
@@ -456,4 +480,130 @@ section {
   top: -10px;
   font-size: 12px;
   color: #aaa;
+}
+
+@media screen and (max-width: 1000px) {
+  #section1 .intro img.phone {
+    display: none;
+  }
+  #section1 .intro img.mcbkair {
+    width: 550px;
+  }
+  #section2 .about {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  #section2 .about p {
+    font-size: 16px;
+    margin: 0 auto;
+  }
+  #section2 .about img.about-img {
+    width: 100%;
+    top: 30%;
+    right: -60%;
+  }
+  .alert {
+    font-size: 12px;
+  }
+  #section4 {
+    text-align: center;
+  }
+  #section4 .contact {
+    width: 100%;
+    padding: 40px 0 0 0;
+    float: none;
+  }
+  #section4 .form {
+    width: 100%;
+    padding: 40px 0 0 0;
+    float: none;
+  }
+  #section4 .form .textarea {
+    margin: 50px auto;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  #navbar span, #navbar2 span {
+    font-size: 18px;
+    padding: 10px 0 0 5px;
+  }
+  #navbar ul, #navbar2 ul {
+    margin: 0;
+    font-size: 12px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0px;
+  }
+  #navbar ul li, #navbar2 ul li {
+    margin-right: 0px;
+    height: 100%;
+    padding-top: 15px;
+  }
+  #navbar ul li:hover, #navbar2 ul li:hover {
+    background: #b60606;
+  }
+  #navbar ul li:hover a, #navbar2 ul li:hover a {
+    color: white;
+  }
+  #navbar ul li a, #navbar2 ul li a {
+    padding: 3px 0px;
+    height: 100%;
+  }
+  #section1 .intro {
+    padding: 100px 0;
+    width: 100%;
+    text-align: center;
+  }
+  #section1 .intro .mcbkair {
+    display: none;
+  }
+  #section2 .about {
+    padding: 50px 0;
+  }
+  #section3 {
+    padding: 40px 0;
+  }
+  #section3 .portfolio-text .b-border {
+    padding: 0 45px 40px;
+    margin: 0;
+  }
+  #section3 .portfolio {
+    padding: 0;
+  }
+  #section3 .portfolio .project:hover {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  #section3 .portfolio .animate {
+    -webkit-animation: bounceInLeft 1s 1;
+            animation: bounceInLeft 1s 1;
+    visibility: visible;
+  }
+  #section4 .contact h2 {
+    margin: 0 0 25px;
+  }
+  #section4 .contact p {
+    margin: 0 0 0 35px;
+    text-align: center;
+  }
+  #section4 .form {
+    padding: 0;
+  }
+  #section4 .form .input-group {
+    margin-bottom: 25px;
+  }
+  #section4 .form .textarea {
+    width: 80%;
+    margin: 35px auto;
+  }
+  body {
+    margin-bottom: 50px;
+  }
+  .alert {
+    height: 50px;
+  }
 }
