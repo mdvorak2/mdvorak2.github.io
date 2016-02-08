@@ -533,9 +533,6 @@ section {
     margin: 0;
     font-size: 12px;
     height: 100%;
-    position: absolute;
-    right: 0;
-    top: 0px;
   }
   #navbar ul li, #navbar2 ul li {
     margin-right: 0px;
