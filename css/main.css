@@ -372,6 +372,11 @@ section {
   background-size: cover;
 }
 
+#section3 .portfolio .project a.cv {
+  background-image: url("../img/projects/cv.jpg");
+  background-size: cover;
+}
+
 #section3 .portfolio .animate {
   -webkit-animation: bounceInDown 1.5s 1;
           animation: bounceInDown 1.5s 1;
