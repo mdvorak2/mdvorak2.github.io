@@ -1,6 +1,9 @@
 $(function(){
 
 
+
+
+
 function intro(){
   setTimeout(function(){
         $('.intro h1').addClass('show');
@@ -42,6 +45,7 @@ $('.close').click(function(){
 
 
 
+
 $(window).scroll(function(){
 
   var wScroll = $(this).scrollTop(),
@@ -74,35 +78,17 @@ $(window).scroll(function(){
     show($('.about h2'));
 
     function floating(){
-      // $('.intro h1, .intro p').css({
-      //     'transform' : 'translate(0px, '+ wScroll /25 +'%)'
-      // });
 
       $('.phone').css({
-          'transform' : 'translate(0px, '+ wScroll /25 +'%)',
+          'transform' : 'translate(0px, '+ wScroll /45 +'%)',
       });
 
       $('.mcbkair').css({
-          'transform' : 'translate(0px, -'+ wScroll /85 +'%)'
+          'transform' : 'translate(0px, -'+ wScroll /45 +'%)'
       });
-      //
-      // $('.about-img').css({
-      //     'transform' : 'translate(0px, -'+ ((wScroll /55)) +'%)'
-      //   });
+
   }
 
-  floating();
-
-    /****************************** PORTFOLIO SLIDE-IN ******************************/
-    // if(( $('.portfolio').offset().top-wScroll) <= (wHeight/1.55) ) {
-    //   $('.project a').each(function(i){
-    //     setTimeout(function() {
-    //       $('.project a').eq(i).addClass('show');
-    //     }, 250*(i+1));
-    //
-    //
-    //   });
-    // } animation: bounceInDown 1s 1
     if(( $('.portfolio').offset().top-wScroll) <= (wHeight/1.55) ) {
       $('.project').each(function(i){
         setTimeout(function(){
@@ -112,13 +98,40 @@ $(window).scroll(function(){
 
     }
 
+//about
 
+
+
+  function active(){
+    var s2ot = $('#section2').offset().top,
+        s3ot = $('#section3').offset().top,
+        s4ot = $('#section4').offset().top;
+
+
+
+        if(wScroll < s2ot-300){
+          $('#navbar2 ul li a').removeClass('active');
+        }else
+        if(wScroll >= s2ot-300 && wScroll < s3ot-300){
+          $('#navbar2 ul li a').removeClass('active');
+          $('#navbar2 ul li:nth-child(1) a').addClass('active');
+        }else
+          if(wScroll >= (s3ot-300) && wScroll < s4ot-300){
+            $('#navbar2 ul li a').removeClass('active');
+          $('#navbar2 ul li:nth-child(2) a').addClass('active');
+        }else
+          if(wScroll >= s4ot-300){
+            $('#navbar2 ul li a').removeClass('active');
+          $('#navbar2 ul li:nth-child(3) a').addClass('active');
+        }
+  }
 
 
 
 
     stickNavbar();
-
+    floating();
+    active();
 
   });/* scroll fce  */
 

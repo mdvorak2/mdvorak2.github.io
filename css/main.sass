@@ -28,18 +28,7 @@ h1, h2, h3, h4, h5, h6, small
   font-family: 'Open Sans Condensed', sans-serif
   color: $pColor
 
-.hidden
-  visibility: hidden
 
-
-.fixed
-  position: fixed
-  top: 0
-  right: 0
-  left: 0
-  height: 50px
-  box-shadow: 0 0 5px #4d4141
-  z-index: 9001
 
 .b-border
   border-bottom: 1px solid #bebebe
@@ -70,13 +59,32 @@ h1, h2, h3, h4, h5, h6, small
     right: 10px
     cursor: pointer
 
+.hidden
+  visibility: hidden
 
+
+.fixed
+  position: fixed
+  top: 0
+  right: 25px
+  left: 25px
+  height: 50px
+  box-shadow: 0 0 5px #4d4141
+  z-index: 9001
+
+#navbar
+  $left: 67px
+  left: 25px
+  position: relative
+  width: calc(100vw - #{$left})
 
 #navbar, #navbar2
-  width: 100vw
-  max-width: 100%
-  background: #eeeeee
+  // width: 100vw
+  // max-width: 100%
+  background: transparentize(#c9c9c9, .2)
   height: 50px
+  box-shadow: none!important
+
 
   span
     font-family: 'Open Sans Condensed', sans-serif
@@ -94,22 +102,22 @@ h1, h2, h3, h4, h5, h6, small
     margin: 0 60px 0
     font-size: 18px
     height: 100%
-
     li
       display:inline-block
       margin-right: 8px
       height: 100%
-      padding: 12px
-      &:hover
-        background: $lighterRed
-      &:hover a
-        color: white
       a
-        padding: 3px 5px
+        padding: 12px
+        display:inline-block
         height: 100%
-
-
-
+        +transition
+        &:hover,
+        &:focus
+          color: white
+          background: $lighterRed
+        &.active
+          color: white
+          background: $lighterRed
 section
   width: 100vw
   max-width: 100%
@@ -184,6 +192,8 @@ section
   color: red
   z-index: -2
   height: 800px
+  margin: 0 15px
+  width: auto
 
 
   .about
@@ -308,67 +318,11 @@ section
       animation: bounceInDown 1.5s 1
       visibility: visible
 
-  // .portfolio-text
-  //   text-align: center
-  //   height: 600px
-  //   width: 50%
-  //   float: right
-  //   background: #dfdfdf
-  //   box-shadow:  inset 1px -1px 3px #989898
-  //
-  //   h2
-  //     margin: 140px 0 35px
-  //   p
-  //     width: 50%
-  //     margin: 30px auto
-
-
-    // .project
-    //   width: 50%
-    //   height: 300px
-    //   float: left
-    //   border-right: 1px solid #d9d9d9
-    //   border-top: 1px solid #d9d9d9
-    //   position: relative
-    //   overflow: hidden
-    //   &:hover a figcaption
-    //     +transform(translateX(0))
-    //     opacity: 1
-    //   a
-    //     position: absolute
-    //     top: 0
-    //     right: 0
-    //     bottom: 0
-    //     left: 0
-    //     +transform(translateX(-100%))
-    //     +transition(1.5s)
-    //
-    //     figcaption
-    //       color: white
-    //       background: $red
-    //       font-size: 18px
-    //       // border: 1px solid #6b0808
-    //       // border-right: none
-    //       box-shadow: 2px 2px 8px #2d2d2d
-    //       position: absolute
-    //       bottom: 5px
-    //       right: 0
-    //       text-align: center
-    //       min-width: 250px
-    //       padding: 15px 50px
-    //       opacity: 0
-    //       +transition(translate, .3s)
-    //       +transform(translateX(100%))
-
-
-
-
-
 
 #section4
-  min-height: 500px
+  min-height: 80vh
   background: white
-  padding: 0 0 20px 0
+  padding: 150px 0 20px 0
   .contact
     width: 45%
     min-width: 450px
@@ -499,9 +453,13 @@ section
 
 
 @media screen and (max-width: $sm)
-
+  p
+    font-size: 14px!important
   #navbar, #navbar2
-
+    width: 100vw
+    max-width: 100%
+    left: 0
+    right: 0
     span
       font-size: 18px
       padding: 10px 0 0 5px
@@ -516,13 +474,8 @@ section
       li
         margin-right: 0px
         height: 100%
-        padding-top: 15px
-        &:hover
-          background: $lighterRed
-        &:hover a
-          color: white
         a
-          padding: 3px 0px
+          padding: 15px 12px
           height: 100%
 
 
@@ -532,8 +485,11 @@ section
       width: 100%
       text-align: center
       .mcbkair
-        display: none
+        bottom: 0px
+
+
   #section2
+    margin: 0
     .about
       padding: 50px 0
 
@@ -541,7 +497,7 @@ section
     padding: 40px 0
     .portfolio-text
       .b-border
-        padding: 0 45px 40px
+        padding: 0 10px 40px
         margin: 0
     .portfolio
       padding: 0
@@ -553,17 +509,19 @@ section
         animation: bounceInLeft 1s 1
         visibility: visible
   #section4
-
+    padding: 0 10px 50px
     .contact
-
+      text-align: center
+      margin-bottom: 30px
       h2
-        margin: 0 0 25px
+        margin: 0
       p
-        margin: 0 0 0 35px
-        text-align: center
+        margin: 0
+
 
     .form
       padding: 0
+      margin: 0
       .input-group
         margin-bottom: 25px
       .textarea
