@@ -1,142 +1,70 @@
-$(function(){
+function initCarousel() {
+    var myCarousel = document.querySelector('.carousel')
 
+    if (!myCarousel) {
+        return;
+        // console.error("Failed to find .carousel element");
+    }
 
-
-
-
-function intro(){
-  setTimeout(function(){
-        $('.intro h1').addClass('show');
-  },500);
-
-  setTimeout(function(){
-        $('.intro p').addClass('show');
-  },800);
-
-  setTimeout(function(){
-        $('.mcbkair').addClass('show');
-  },1100);
-
-  setTimeout(function(){
-      $('.phone').addClass('show');
-  },1350);
+    return new bootstrap.Carousel(myCarousel, {
+        interval: 5 * 100 * 1000,
+    });
 }
 
 
-
-$('.form .input-group input').focusout(function(){
-  var text_val = $(this).val();
-
-  if(text_val === ""){
-    $(this).removeClass('has-value');
-  }else{
-    $(this).addClass('has-value');
-  }
-});
-
-$('.close').click(function(){
-  $('.alert').css({
-    'display':'none'
-  });
-  $('body').css({
-    'margin-bottom':'0'
-  });
-});
+function onPageLoad() {
+    initCarousel();
+}
 
 
+document.addEventListener('DOMContentLoaded', onPageLoad);
 
 
-$(window).scroll(function(){
+var gallery = (function () {
+    var BASE_PATH = "/assets/img/photos/";
+    var PHOTO_COUNT = 8;
 
-  var wScroll = $(this).scrollTop(),
-      wHeight = $(window).height(),
-      navbar = $('#navbar').offset().top;
-
-
-    function stickNavbar(){
-      if(wScroll > navbar){
-        $('#navbar2').removeClass('hidden');
-        $('#navbar').addClass('hidden');
-    // }else{$('#navbar2').addClass('hidden');('#navbar').removeClass('hidden');
-    }
-    }
-
-
-/***************************************************
-.show = opacity: 1; transform:translate(0);
- ************************************************ */
-
-    function show(element){
-      if(( element.offset().top-wScroll) <= (wHeight/1.5) ) {
-        element.addClass('show');
-      }
-    }
-
-
-    show( $('.about-img') );
-    show($('.about p'));
-    show($('.about h2'));
-
-    function floating(){
-
-      $('.phone').css({
-          'transform' : 'translate(0px, '+ wScroll /45 +'%)',
-      });
-
-      $('.mcbkair').css({
-          'transform' : 'translate(0px, -'+ wScroll /45 +'%)'
-      });
-
-  }
-
-    if(( $('.portfolio').offset().top-wScroll) <= (wHeight/1.55) ) {
-      $('.project').each(function(i){
-        setTimeout(function(){
-          $('.project').eq(i).addClass('animate');
-        },250*(i+1));
-      });
-
-    }
-
-//about
-
-
-
-  function active(){
-    var s2ot = $('#section2').offset().top,
-        s3ot = $('#section3').offset().top,
-        s4ot = $('#section4').offset().top;
-
-
-
-        if(wScroll < s2ot-300){
-          $('#navbar2 ul li a').removeClass('active');
-        }else
-        if(wScroll >= s2ot-300 && wScroll < s3ot-300){
-          $('#navbar2 ul li a').removeClass('active');
-          $('#navbar2 ul li:nth-child(1) a').addClass('active');
-        }else
-          if(wScroll >= (s3ot-300) && wScroll < s4ot-300){
-            $('#navbar2 ul li a').removeClass('active');
-          $('#navbar2 ul li:nth-child(2) a').addClass('active');
-        }else
-          if(wScroll >= s4ot-300){
-            $('#navbar2 ul li a').removeClass('active');
-          $('#navbar2 ul li:nth-child(3) a').addClass('active');
+    function render(elementSelector) {
+        var container = document.querySelector(elementSelector);
+        
+        if(!container){
+            console.error("failed to find element ", container);
+            return;
         }
-  }
 
+        for (var i = 1; i <= PHOTO_COUNT; i++) {
+            var image = createImage(i + ".jpg");
+            container.appendChild(image);
+        }
 
+        new SimpleLightbox({
+            elements: '#gallery a.portfolio-box'
+        });    
 
+        document.dispatchEvent(new Event("galleryLoaded"))
+    }
 
-    stickNavbar();
-    floating();
-    active();
+    function createImage(imageName) {
+        var pathToImage = BASE_PATH + imageName;
 
-  });/* scroll fce  */
+        var div = document.createElement('div');
+        div.classList.add('col-lg-4', 'pe-3', 'pb-3', 'col-sm-6')
 
-intro();
+        var link = document.createElement('a');
+        link.classList.add('portfolio-box');
+        link.setAttribute('href', pathToImage);
 
+        var img = document.createElement('img');
+        img.classList.add('img-fluid');
+        img.src = pathToImage
 
+        link.appendChild(img);
+        div.appendChild(link);
 
-}) /* doc.rdy */
+        return div;
+    }
+
+    return {
+        render
+    }
+})();

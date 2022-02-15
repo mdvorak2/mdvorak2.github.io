@@ -1,0 +1,123 @@
+<html><head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="madv">
+    <title>Ekonomické ploty</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <!-- Bootstrap Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css">
+    <!-- SimpleLightbox plugin CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet">
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/overrides.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <script src="/packages/splide/js/splide.min.js"></script>
+    <script src="/js/default_scripts.js"></script>
+  <!-- Code injected by live-server -->
+  <script type="text/javascript">
+      // <![CDATA[  <-- For SVG support
+      if ('WebSocket' in window) {
+          (function () {
+              function refreshCSS() {
+                  var sheets = [].slice.call(document.getElementsByTagName("link"));
+                  var head = document.getElementsByTagName("head")[0];
+                  for (var i = 0; i < sheets.length; ++i) {
+                      var elem = sheets[i];
+                      var parent = elem.parentElement || head;
+                      parent.removeChild(elem);
+                      var rel = elem.rel;
+                      if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                          var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                          elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                      }
+                      parent.appendChild(elem);
+                  }
+              }
+              var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+              var address = protocol + window.location.host + window.location.pathname + '/ws';
+              var socket = new WebSocket(address);
+              socket.onmessage = function (msg) {
+                  if (msg.data == 'reload') window.location.reload();
+                  else if (msg.data == 'refreshcss') refreshCSS();
+              };
+              if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                  console.log('Live reload enabled.');
+                  sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+              }
+          })();
+      }
+      else {
+          console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+      }
+      // ]]>
+  </script></head>
+  <body><nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <div class="container px-4 px-lg-5">
+      <!-- <a class="navbar-brand" href="#page-top">Ekonomické ploty</a> -->
+      <a class="navbar-brand" href="/">Ekonomické ploty</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto my-2 my-lg-0">
+          <!-- <li class="nav-item"><a class="nav-link" href="index.html#about">O nás</a></li> -->
+          <li class="nav-item"><a class="nav-link" href="index.html#benefits">Služby</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#portfolio">Naše práce</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Galerie</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div id="darkNavbarByDefault"></div>
+  <div class="gallery" id="content">
+    <section class="gallery-section page-section">
+      <div class="container p-0">
+        <div class="row" id="gallery"></div>
+      </div>
+    </section>
+  </div>
+  <script type="text/javascript">
+     document.addEventListener('DOMContentLoaded', function(){
+        gallery.render("#gallery");
+    });
+    
+  </script>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 logo-wrapper"><img class="logo" src="/assets/logo_cropped.jpg"></div>
+        <div class="col-lg-6 offset-sm-2">
+          <div class="row text-right">
+            <div class="col-lg-12"> 
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item"><a href="tel:+420 123 456 789"><i class="bi-telephone fs-3"></i><span class="icon-text">+420 123 456 789</span></a></li>
+                <li class="list-inline-item me-4"><a href="https://whatsapp.com/send?phone=123456789" target="_blank"><i class="bi-whatsapp fs-3"></i><span class="icon-text">WhatsApp</span></a></li>
+                <li class="list-inline-item"><a href="https://www.facebook.com/ekonomickeploty.cz" target="_blank"><i class="bi-facebook fs-3"></i><span class="icon-text">Facebook</span></a></li>
+              </ul>
+            </div>
+            <div class="col-lg-12 pt-3 pb-2">
+              <ul class="list-inline mb-2">
+                <li class="list-inline-item"><a href="#!">About</a></li>
+                <li class="list-inline-item">⋅</li>
+                <li class="list-inline-item"><a href="#!">Contact</a></li>
+                <li class="list-inline-item">⋅</li>
+                <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
+                <li class="list-inline-item">⋅</li>
+                <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+              </ul>
+            </div>
+            <div class="col-12"> 
+              <p class="text-muted small mb-4 mb-lg-0 copyright text-right">© Ekonomické ploty 2021. Všechna práva vyhrazena.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+  <script src="/js/scripts.js"></script><div id="viewPortSize" class="bottom_right" style="display: none; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); font-size: 12px;"></div></body></html>

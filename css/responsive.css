@@ -1,0 +1,15 @@
+@media (min-width: 992px){
+    
+    #mainNav:not(.navbar-shrink) .navbar-brand,
+    #mainNav:not(.navbar-shrink) .navbar-nav .nav-item .nav-link {
+        /* color: rgba(255, 255, 255, 0.9); */
+        /* color: #bda25c; */
+        color: #fff;
+        text-shadow: 0 0 10px rgb(110 110 110);
+    }
+
+    #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link.active,
+    #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link:hover {
+        color: #bda25c!important;
+    }
+}
