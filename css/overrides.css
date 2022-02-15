@@ -44,6 +44,9 @@ footer a{
 
 .logo-wrapper .logo{
   display: inline-block;
+  max-width: 90%;
+  margin: auto;
+  padding-bottom: 12px;
 }
 
 footer .logo{

@@ -13,3 +13,14 @@
         color: #bda25c!important;
     }
 }
+
+
+@media (max-width: 900px){
+    
+    #carousel {
+        max-height: 400px;
+    }
+}
+
+
+ 
