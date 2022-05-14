@@ -5,8 +5,6 @@
 
 
 
-
-
 div#content{
   min-height: calc(100vh - 300px);
 }
@@ -16,18 +14,25 @@ div#content{
   padding-top: 50px;
 }
 
-/* #carouselWrapper .carousel-inner > .carousel-item > img, .carousel-inner > .carousel-item > a > img{
-  margin:auto;
-  min-height: 100%;
-} */
-
-
 #carouselWrapper {}
 
 
+#content{
+  background-color: #fff;
+}
+
+#gallery{
+  width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+body, footer{
+  background-color: #111924;
+}
+
 footer.footer {
   /* height: 200px; */
-  background-color: #111924;
   padding-top: 3rem;
   padding-bottom: 3rem;
   position: relative;
@@ -44,9 +49,6 @@ footer a{
 
 .logo-wrapper .logo{
   display: inline-block;
-  max-width: 90%;
-  margin: auto;
-  padding-bottom: 12px;
 }
 
 footer .logo{
@@ -55,6 +57,8 @@ footer .logo{
   margin-top: -25px;
   margin-bottom: 25px;
   /* margin-top: -30px; */
+  /* max-width: 100%; */
+  max-width: 80%;
 }
 
 

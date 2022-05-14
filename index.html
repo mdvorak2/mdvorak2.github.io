@@ -1,246 +1,191 @@
-<html>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="madv">
+<head> 
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <meta name="description" content=""/>
+  <meta name="author" content="madv"/>
   <title>Ekonomické ploty</title>
   <!-- Favicon-->
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
   <!-- Bootstrap Icons-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
   <!-- Google fonts-->
-  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
-    rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css"/>
   <!-- SimpleLightbox plugin CSS-->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet"/>
   <!-- Core theme CSS (includes Bootstrap)-->
-  <link href="/css/styles.css" rel="stylesheet">
-  <link href="/css/overrides.css" rel="stylesheet">
-  <link href="/css/responsive.css" rel="stylesheet">
-  <script src="/packages/splide/js/splide.min.js"></script>
-  <script src="/js/default_scripts.js"></script>
-  <!-- Code injected by live-server -->
-  <script type="text/javascript">
-    // <![CDATA[  <-- For SVG support
-    if ('WebSocket' in window) {
-      (function () {
-        function refreshCSS() {
-          var sheets = [].slice.call(document.getElementsByTagName("link"));
-          var head = document.getElementsByTagName("head")[0];
-          for (var i = 0; i < sheets.length; ++i) {
-            var elem = sheets[i];
-            var parent = elem.parentElement || head;
-            parent.removeChild(elem);
-            var rel = elem.rel;
-            if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-              var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-              elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-            }
-            parent.appendChild(elem);
-          }
-        }
-        var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-        var address = protocol + window.location.host + window.location.pathname + '/ws';
-        var socket = new WebSocket(address);
-        socket.onmessage = function (msg) {
-          if (msg.data == 'reload') window.location.reload();
-          else if (msg.data == 'refreshcss') refreshCSS();
-        };
-        if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-          console.log('Live reload enabled.');
-          sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-        }
-      })();
-    } else {
-      console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-    }
-    // ]]>
+  <script>
+    var DISABLE_NAV_SCROLL = false;
+    
   </script>
+  <link href="/plugins/splide/css/splide.min.css" rel="stylesheet"/>
+  <link href="/plugins/splide/css/themes/splide-default.min.css" rel="stylesheet"/>
+  <script src="/plugins/splide/js/splide.min.js"></script>
+  <link href="/css/styles.css" rel="stylesheet"/>
+  <link href="/css/overrides.css" rel="stylesheet"/>
+  <link href="/css/responsive.css" rel="stylesheet"/>
+  <link href="/css/splide_custom.css" rel="stylesheet"/>
+  <script src="/js/default_scripts.js"></script>
 </head>
-
-<body id="page-top">
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-    <div class="container px-4 px-lg-5"><a class="navbar-brand" href="#page-top">Ekonomické ploty</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-        aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ms-auto my-2 my-lg-0">
-          <!-- <li class="nav-item"><a class="nav-link" href="#about">O nás</a></li> -->
-          <li class="nav-item"><a class="nav-link" href="#benefits">Služby</a></li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio">Naše práce</a></li>
-          <li class="nav-item"><a class="nav-link" href="/gallery.html">Galerie</a></li>
-        </ul>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+  <div class="container px-4 px-lg-5"><a class="navbar-brand" href="#page-top">Ekonomické ploty</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ms-auto my-2 my-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#about">O nás</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Služby</a></li>
+        <li class="nav-item"><a class="nav-link" href="#portfolio">Naše práce</a></li>
+        <li class="nav-item"><a class="nav-link" href="/jade/pages/gallery">Galerie</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div id="carouselWrapper">
+  <div class="carousel slide" id="carousel" data-ride="carousel">
+    <div class="carousel-indicators">
+      <button class="active" type="button" data-bs-target="#carousel" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active"><img class="d-block w-100" src="/assets/img/photos/1.jpg" alt="First slide"/></div>
+      <div class="carousel-item"><img class="d-block w-100" src="/assets/img/photos/2.jpg" alt="Second slide"/></div>
+      <div class="carousel-item"><img class="d-block w-100" src="/assets/img/photos/3.jpg" alt="Third slide"/></div>
+    </div>
+  </div>
+</div>
+<div id="content">
+  <section class="page-section" id="benefits">
+    <div class="container px-4 px-lg-5">
+      <h2 class="text-center mt-0">Výhody betonového plotu</h2>
+      <hr class="divider"/>
+      <div class="row gx-4 gx-lg-5">
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+            <h3 class="h4 mb-2">Dlouhověkost</h3>
+            <p class="text-muted mb-0">Životnost dosahuje několika desítek let</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
+            <h3 class="h4 mb-2">Klid a soukromí</h3>
+            <p class="text-muted mb-0">Důraz na soukromí a především bezpečnost.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+            <h3 class="h4 mb-2">Rozmanitost vzorů</h3>
+            <p class="text-muted mb-0">Napadům a různým kombinacím se meze nekladou</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
+            <h3 class="h4 mb-2">Bez starostí</h3>
+            <p class="text-muted mb-0">Nenáročné na údržbu a vzhledově atraktivní</p>
+          </div>
+        </div>
+      </div>
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h4 class="py-4">Další výhody </h4>
+          <ul class="left">
+            <li>
+              <p>Odolnost proti povětrnostním vlivům, ohni, mrazu, korozi a jiným negativním vnějším vlivům</p>
+            </li>
+            <li>
+              <p>Možná povrchová úprava barvou na beton, nebo lze zvolit již probarvenou variantu</p>
+            </li>
+            <li>
+              <p>Porezita betonu není na závadu</p>
+            </li>
+            <li> 
+              <p>Cenová dostupnost</p>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </nav>
-  <div id="carouselWrapper">
-    <div class="carousel slide" id="carousel" data-ride="carousel">
-      <div class="carousel-indicators">
-        <button class="active" type="button" data-bs-target="#carousel" data-bs-slide-to="0" aria-current="true"
-          aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active"><img class="d-block w-100" src="/assets/img/photos/1.jpg" alt="First slide">
+  </section>
+  <section class="page-section bg-primary" id="about">
+    <div class="container px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="text-white mt-0">
+            Betonové deskové ploty<br><small> <span style="white-space: nowrap">bez-základový </span>plotový systém</small></h2>
+          <hr class="divider divider-light"/>
+          <ul class="left">
+            <li class="text-white-75"> 
+              <p>Montáž betonových plotů "Na klíč" včetně demontáže, odvozu a likvidace starého oplocení - vše dle domluvy</p>
+            </li>
+            <li class="text-white-75"> 
+              <p>Desky a sloupky jsou vyrobeny z vibrovaného jakostního betonu s použitím cementu 42,5 R, kameniva a průmyslové armatury</p>
+            </li>
+            <li class="text-white-75"> 
+              <p>Český výrobek přimo od výrobce - žádné Polsko apod.</p>
+            </li>
+          </ul>
         </div>
-        <div class="carousel-item"><img class="d-block w-100" src="/assets/img/photos/2.jpg" alt="Second slide"></div>
-        <div class="carousel-item"><img class="d-block w-100" src="/assets/img/photos/3.jpg" alt="Third slide"></div>
+      </div>
+    </div>
+  </section>
+  <section class="page-section" id="galleryPreview">
+    <div id="portfolio">
+      <div class="container p-0">
+        <div class="col-lg-8">
+          <h2>Galerie</h2><br/>
+        </div>
+        <div class="row g-0">
+          <div class="col-lg-4 col-sm-6 pe-3 pb-3"><a class="portfolio-box" href="/assets/img/photos/5.jpg" title="Random title"><img class="img-fluid" src="/assets/img/photos/5.jpg" alt="..."/></a></div>
+          <div class="col-lg-4 col-sm-6 pe-3 pb-3"><a class="portfolio-box" href="/assets/img/photos/2.jpg" title="A title"><img class="img-fluid" src="/assets/img/photos/2.jpg" alt="..."/></a></div>
+          <div class="col-lg-4 col-sm-6 pe-3 pb-3"><a class="portfolio-box" href="/assets/img/photos/3.jpg" title="Photo description"><img class="img-fluid" src="/assets/img/photos/3.jpg" alt="..."/></a></div>
+          <div class="col-lg-4 col-sm-6 pe-3 pb-3"><a class="portfolio-box" href="/assets/img/photos/4.jpg" title=""><img class="img-fluid" src="/assets/img/photos/4.jpg" alt="..."/></a></div>
+          <div class="col-lg-4 col-sm-6 pe-3 pb-3"><a class="portfolio-box" href="/assets/img/photos/5.jpg" title=""><img class="img-fluid" src="/assets/img/photos/5.jpg" alt="..."/></a></div>
+          <div class="col-lg-4 col-sm-6 pe-3 pb-3"><a class="portfolio-box" href="/assets/img/photos/6.jpg" title=""><img class="img-fluid" src="/assets/img/photos/6.jpg" alt="..."/></a></div>
+        </div>
+        <div class="div text-center"><a class="ib ma btn btn-primary" href="/jade/pages/gallery">GALERIE           </a></div>
+      </div>
+    </div>
+  </section>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 logo-wrapper"><img class="logo" src="/assets/logo_cropped.jpg"/></div>
+      <div class="col-lg-6 offset-sm-2">
+        <div class="row text-right">
+          <div class="col-lg-12 conta"> 
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item"><a href="tel:+420 123 456 789"><i class="bi-telephone fs-3"></i><span class="icon-text">+420 123 456 789</span></a></li>
+              <li class="list-inline-item me-4"><a href="https://whatsapp.com/send?phone=123456789" target="_blank"><i class="bi-whatsapp fs-3"></i><span class="icon-text">WhatsApp</span></a></li>
+              <li class="list-inline-item"><a href="https://www.facebook.com/ekonomickeploty.cz" target="_blank"><i class="bi-facebook fs-3"></i><span class="icon-text">Facebook</span></a></li>
+            </ul>
+          </div>
+          <div class="col-lg-12 pt-3 pb-2">
+            <ul class="list-inline mb-2">
+              <li class="list-inline-item"><a href="#!">About</a></li>
+              <li class="list-inline-item">⋅</li>
+              <li class="list-inline-item"><a href="#!">Contact</a></li>
+              <li class="list-inline-item">⋅</li>
+              <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
+              <li class="list-inline-item">⋅</li>
+              <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-12"> 
+            <p class="text-muted small mb-4 mb-lg-0 copyright text-right">© Ekonomické ploty 2021. Všechna práva vyhrazena.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div id="content">
-    <section class="page-section" id="benefits">
-      <div class="container px-4 px-lg-5">
-        <h2 class="text-center mt-0">Výhody betonového plotu</h2>
-        <hr class="divider">
-        <div class="row gx-4 gx-lg-5">
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="mt-5">
-              <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
-              <h3 class="h4 mb-2">Dlouhověkost</h3>
-              <p class="text-muted mb-0">Životnost dosahuje několika desítek let</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="mt-5">
-              <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
-              <h3 class="h4 mb-2">Klid a soukromí</h3>
-              <p class="text-muted mb-0">Důraz na soukromí a především bezpečnost.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="mt-5">
-              <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
-              <h3 class="h4 mb-2">Rozmanitost vzorů</h3>
-              <p class="text-muted mb-0">Napadům a různým kombinacím se meze nekladou</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="mt-5">
-              <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
-              <h3 class="h4 mb-2">Bez starostí</h3>
-              <p class="text-muted mb-0">Nenáročné na údržbu a vzhledově atraktivní</p>
-            </div>
-          </div>
-        </div>
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-          <div class="col-lg-8 text-center">
-            <h4 class="py-4">Další výhody </h4>
-            <ul class="left">
-              <li>
-                <p>Odolnost proti povětrnostním vlivům, ohni, mrazu, korozi a jiným negativním vnějším vlivům</p>
-              </li>
-              <li>
-                <p>Možná povrchová úprava barvou na beton, nebo lze zvolit již probarvenou variantu</p>
-              </li>
-              <li>
-                <p>Porezita betonu není na závadu</p>
-              </li>
-              <li>
-                <p>Cenová dostupnost</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="page-section bg-primary" id="about">
-      <div class="container px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-          <div class="col-lg-8 text-center">
-            <h2 class="text-white mt-0">
-              Betonové deskové ploty<br><small> <span style="white-space: nowrap">bez-základový </span>plotový
-                systém</small></h2>
-            <hr class="divider divider-light">
-            <ul class="left">
-              <li class="text-white-75">
-                <p>Montáž betonových plotů "Na klíč" včetně demontáže, odvozu a likvidace starého oplocení - vše dle
-                  domluvy</p>
-              </li>
-              <li class="text-white-75">
-                <p>Desky a sloupky jsou vyrobeny z vibrovaného jakostního betonu s použitím cementu 42,5 R, kameniva a
-                  průmyslové armatury</p>
-              </li>
-              <li class="text-white-75">
-                <p>Český výrobek přimo od výrobce - žádné Polsko apod.</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="page-section" id="galleryPreview">
-      <div id="portfolio">
-        <div class="container p-0">
-          <div class="col-lg-8">
-            <h2>Galerie</h2><br>
-          </div>
-          <div class="row g-0">
-            <div class="col-lg-4 col-sm-6 pe-3 pb-3"><a class="portfolio-box" href="/assets/img/photos/5.jpg"
-                title="Random title"><img class="img-fluid" src="/assets/img/photos/5.jpg" alt="..."></a></div>
-            <div class="col-lg-4 col-sm-6 pe-3 pb-3"><a class="portfolio-box" href="/assets/img/photos/2.jpg"
-                title="A title"><img class="img-fluid" src="/assets/img/photos/2.jpg" alt="..."></a></div>
-            <div class="col-lg-4 col-sm-6 pe-3 pb-3"><a class="portfolio-box" href="/assets/img/photos/3.jpg"
-                title="Photo description"><img class="img-fluid" src="/assets/img/photos/3.jpg" alt="..."></a></div>
-            <div class="col-lg-4 col-sm-6 pe-3 pb-3"><a class="portfolio-box" href="/assets/img/photos/4.jpg"
-                title=""><img class="img-fluid" src="/assets/img/photos/4.jpg" alt="..."></a></div>
-            <div class="col-lg-4 col-sm-6 pe-3 pb-3"><a class="portfolio-box" href="/assets/img/photos/5.jpg"
-                title=""><img class="img-fluid" src="/assets/img/photos/5.jpg" alt="..."></a></div>
-            <div class="col-lg-4 col-sm-6 pe-3 pb-3"><a class="portfolio-box" href="/assets/img/photos/6.jpg"
-                title=""><img class="img-fluid" src="/assets/img/photos/6.jpg" alt="..."></a></div>
-          </div>
-          <div class="div text-center"><a class="ib ma btn btn-primary" href="/gallery.html">GALERIE </a></div>
-        </div>
-      </div>
-    </section>
-  </div>
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 logo-wrapper"><img class="logo" src="/assets/logo_cropped.jpg"></div>
-        <div class="col-lg-6 offset-sm-2">
-          <div class="row text-right">
-            <div class="col-lg-12">
-              <ul class="list-inline mb-0">
-                <li class="list-inline-item"><a href="tel:+420 123 456 789"><i class="bi-telephone fs-3"></i><span
-                      class="icon-text">+420 123 456 789</span></a></li>
-                <li class="list-inline-item me-4"><a href="https://whatsapp.com/send?phone=123456789" target="_blank"><i
-                      class="bi-whatsapp fs-3"></i><span class="icon-text">WhatsApp</span></a></li>
-                <li class="list-inline-item"><a href="https://www.facebook.com/ekonomickeploty.cz" target="_blank"><i
-                      class="bi-facebook fs-3"></i><span class="icon-text">Facebook</span></a></li>
-              </ul>
-            </div>
-            <div class="col-lg-12 pt-3 pb-2">
-              <ul class="list-inline mb-2">
-                <li class="list-inline-item"><a href="#!">About</a></li>
-                <li class="list-inline-item">⋅</li>
-                <li class="list-inline-item"><a href="#!">Contact</a></li>
-                <li class="list-inline-item">⋅</li>
-                <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
-                <li class="list-inline-item">⋅</li>
-                <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
-              </ul>
-            </div>
-            <div class="col-12">
-              <p class="text-muted small mb-4 mb-lg-0 copyright text-right">© Ekonomické ploty 2021. Všechna práva
-                vyhrazena.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-  <script src="/js/scripts.js"></script>
-  <div id="viewPortSize" class="bottom_right"
-    style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); font-size: 12px; display: none;">Inner: 1450 x
-    575<br>Outer: 1466 x 695</div>
-</body>
-
-</html>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+<script src="/plugins/splide/js/splide.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/scripts.js"></script>

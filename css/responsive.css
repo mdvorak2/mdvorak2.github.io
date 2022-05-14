@@ -14,13 +14,46 @@
     }
 }
 
-
-@media (max-width: 900px){
-    
-    #carousel {
-        max-height: 400px;
+@media (max-width: 480px){
+    nav{
+        min-width: 100%;
     }
+    #gallery, #portfolio {
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+
+    div#content {
+        min-height: unset;
+    }
+
+    
+    footer .footer-sections{
+        text-align: center;
+    }
+
+    footer .copyright,
+    footer .contacts {
+        text-align: center;
+    }
+
+    footer .contacts ul{
+        display: inline-block;
+        margin: auto;
+        text-align-last: left;
+    }
+
+    footer .contacts ul li{
+        display: block;
+        margin-bottom: 16px;
+    }
+
+    footer span.icon-text {
+        transform: translateY(-2px);
+    }
+
+    footer.footer {
+        padding-bottom: 1rem;
+    }
+
 }
-
-
- 
