@@ -63,7 +63,7 @@ footer .logo{
 
 
 #carousel {
-  height: 70vh;
+  height: 60vh;
   max-height: 650px;
   /* overflow: hidden; */
 }
@@ -111,7 +111,8 @@ nav.navbar a{
 } */
 
 a, a:hover{
-  color: #726a5b;
+  /* color: #726a5b; */
+  color: #8d826f;
 }
 
 
