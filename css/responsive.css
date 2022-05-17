@@ -21,6 +21,10 @@
         height: auto;
         max-height: unset;
       }
+
+    nav.navbar + * {
+        margin-top: 70px;
+    }
       
 }
 
