@@ -22,10 +22,13 @@
         max-height: unset;
       }
 
-    nav.navbar + * {
+    /* nav.navbar + * {
         margin-top: 70px;
+    } */
+    
+    .page-section {
+        padding: 2.5rem 0;
     }
-      
 }
 
 
@@ -33,6 +36,7 @@
     nav{
         min-width: 100%;
     }
+    
     #gallery, #portfolio {
         padding-left: 36px;
         padding-right: 36px;

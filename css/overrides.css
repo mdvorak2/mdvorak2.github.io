@@ -2,9 +2,6 @@
   /* --bs-primary-rgb: 146, 59, 35; */
 }
 
-
-
-
 div#content{
   min-height: calc(100vh - 300px);
 }
@@ -153,4 +150,22 @@ hr.divider {
 
 .logo-wrapper{
   text-align: center;
+}
+
+nav.navbar-shrink + div{
+        margin-top: 70px;
+}
+
+#gallery .splide__arrows button.splide__arrow{
+  background: #fff;
+  opacity: 1;
+}
+
+#gallery #thumbnail-carousel-track{
+  /* padding-left: 50px!important;
+  padding-right: 50px!important;*/
+
+  width: 90%!important;
+  margin: auto!important;
+
 }
